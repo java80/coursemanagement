@@ -8,11 +8,13 @@
 
 ## Wireframes
 
-![wireframe](https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward.png)
+![wireframe](https://user-images.githubusercontent.com/2756826/117493029-6c9e1800-af40-11eb-96d2-272b11730835.png)
+(https://user-images.githubusercontent.com/2756826/117493240-bb4bb200-af40-11eb-8284-5563da6f6671.png)
+
 
 ## Component Hierarchy
 
-![hierarchy](https://github.com/foremanlb/Dev-It-Forward/blob/development/assets/PayitForward%20-%20Full-Stack%20Hierarchy.png)
+![hierarchy](https://user-images.githubusercontent.com/2756826/117494102-e08cf000-af41-11eb-8284-c9599ce12de3.png)
 
 ## API and Data Sample
 
@@ -36,7 +38,6 @@
 
 #### PostMVP
 
-- Creating student table
 - Filtering classes based on category
 - Adding Payment System
 - adding review system for courses
