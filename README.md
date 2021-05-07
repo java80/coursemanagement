@@ -1,23 +1,5 @@
 # PROJECT 4 README <!-- omit in toc -->
 
-> The Project Planning section **should be completed** for your project pitch with instructors.
->
-> To ensure correct Markdown, copy and paste the raw template code into your project repo README file. Remove ALL template instructions and replace with your project details.
-
-- [Overview](#overview)
-- [MVP](#mvp)
-  - [Goals](#goals)
-  - [Libraries and Dependencies](#libraries-and-dependencies)
-  - [Client (Front End)](#client-front-end)
-    - [Wireframes](#wireframes)
-    - [Component Tree](#component-tree)
-    - [Component Architecture](#component-architecture)
-    - [Time Estimates](#time-estimates)
-  - [Server (Back End)](#server-back-end)
-    - [ERD Model](#erd-model)
-- [Post-MVP](#post-mvp)
-- [Code Showcase](#code-showcase)
-- [Code Issues & Resolutions](#code-issues--resolutions)
 
 <br>
 
@@ -47,21 +29,19 @@ _The **Project Title** CourseManagment_
 - _Back-End Development._
 - _Front End Development._
 - _CSS Styling /Testing/No New Features._
-- _etc._
+
 
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
-
+> 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
 |      React       | Javascript front-end framework             |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Ruby on rails| _Lorem ipsum dolor sit amet, consectetur._ |
+|   React Router   | _From React                             ._ |
+|     Ruby on rails| _Ruby framework                            |
 
 
 <br>
@@ -70,13 +50,7 @@ _The **Project Title** CourseManagment_
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
-
-<!-- ![Dummy Link](url)
-
-- Desktop Landing
-
-![Dummy Link](url) -->
+> 
 
 - Desktop Hero
 
@@ -131,18 +105,17 @@ src
 
 | Component        | Priority | Estimated (hrs)| Time Invested |
 | ---------------- | :------: | :------------: | :-----------: |
-| Proposal/Concept |    H     |      4hrs      |      7hrs     |
-| Setup db/model folder H      |      .25       |      .25hr    |
-| Routes           |    H     |      0.25      |      0.25     |
-| Controllers      |    H     |      0.25      |      0.25     |
-| Routes           |    H     |      0.25      |     0.5       |
-| Back-End Deploy  |    H     |      4hrs      |       7       |
-| Front-End Setup  |    H     |                | Time Invested |
-| TeachersClassCard|    H     |                |               |
-|FrontCardContainer|    H     |                |               |
-| Tutor Gallery    |    H     |                |               |
-| App JS Edits     |    H     |                |               |
-|                  |          |                |               |
+| Proposal/Concept |    H     |      4hrs      |      24hrs     |
+| Setup db/model folder H     |      .25       |               |
+| Routes           |    H     |      0.25      |               |
+| Controllers      |    H     |      0.25      |               |
+| Routes           |    H     |      0.25      |               |
+| Back-End Deploy  |    H     |      4hrs      |               |
+| Front-End Setup  |    H     |        5       |               |
+| TeachersClassCard|    H     |        5       |               |
+|FrontCardContainer|    H     |        5       |               |
+| App JS Edits     |    H     |        5       |               |
+|                  |          |        5       |               |
 
 > _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
@@ -154,7 +127,7 @@ src
 
 > Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
 
-[ERD Sample](https://drive.google.com/file/d/1kLyQTZqfcA4jjKWQexfEkG2UspyclK8Q/view)
+![ERD Sample](https://user-images.githubusercontent.com/2756826/117507671-5e0e2b80-af55-11eb-98dc-d139fd2d29f4.png)
 <br>
 
 ***
