@@ -4,7 +4,7 @@
 
 ## Project Description
 
- Course managment application that allows the educators to post courses and allow for students to enroll in.
+ Course managment application that allows the educators to post courses and allow for students to enroll in courses.
 
 ## Wireframes
 
@@ -22,28 +22,24 @@
 
 #### MVP
 
-- Back-End/MERN Stack
-  - Full Back End CRUD for both Users and Tutors
-  - Integrated Authorization and Authentication
+- Back-End/Ruby on rails
+  - Api built using ruby on rails
+  - User authentication using Devise gem
 - Front-End/React
-  - Robust Functionality with 12 stateful Components
-  - Responsive Mobile-First CSS Design
+  - Component driven built
+  - Responsive design using CSS
 - Misc
-  - Effective use of Agile Methodology/SCRUM/Product Management/Kanban Board
-  - Use of Effective File Structuring so each component will have it's own folder containing relevant files:
-    (example:)
+  
     ComponentFolder>>
     Component.jsx
     Component.css
 
 #### PostMVP
 
-- Collaborate with UX Design specialist
-- Adding a Rating System
-- Add Tutor Filtering System
-- Add Tutor Sorting System
-- Add Payment System
-- Add Chat/Messaging System
+- Creating student table
+- Filtering classes based on category
+- Adding Payment System
+- adding review system for courses
 
 ## Project Schedule
 
@@ -84,28 +80,13 @@
 
 ### Strengths:
 
-    Craig: Front End/React Functions, Style
-    Will: functions, state, manipulating data
-    Ike: Back-end - db/model/controller
-    Francis: Linting/Back-End Development/Management
-
+   
 ### Weaknesses:
 
-    Craig:Back End/Authentication, Presentation
-    Will: connecting backend to front/authentication
-    Ike: Front-end/css/planning projects/presenting things
-    Francis: React/ Front-End Development /Authentication/ Authorization/Design/CSS
-
+   
 ### Opportunities:
 
-    First Foray into AGILE SDLC style
-    Strengthen Weakpoints and learning other developer coding styles
-    Learning to develop in a team-based environment
-
+   
 ### Threats:
 
-    Since we are an untested group there is a risk of non-cohesion
-    Over scoping our project
-    Run risk of ineffective time usage
-    Getting stuck and not seeking help
-    Unfamiliarity with branch development and handling merge errors
+   
