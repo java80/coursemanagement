@@ -50,5 +50,7 @@ course_list = [
   },
 ]
 
-
+course_list.each do |course| 
+  Course.create!(course)
+end
 puts "#{course_list.count} courses created!"
