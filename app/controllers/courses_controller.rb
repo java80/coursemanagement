@@ -1,13 +1,16 @@
 class CoursesController < ApplicationController
-
+  #skip_before_action :authenticate_user!, only: %i[index show]
+  #before_action :set_course, only:%i[show update destroy]
   def index
     @courses = Course.all
     render json: @courses
   end
+
   def show
     @course = Course.find(params[:id])
-    render json: @course include: [:courses]
+    render json: @course, include: [:courses]
   end
+
   def create
     @course = Course.new(course_params)
     if @course.save
@@ -32,6 +35,9 @@ class CoursesController < ApplicationController
     render json: {message: "#{course.name} has been deleted"}
   end
   private
+  def set_course
+    @course = Course.find(params[:id])
+  end
   def course_params
   params.require(:course).permit(:name, :imageurl, :description, :category)
   end
