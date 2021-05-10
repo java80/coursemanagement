@@ -1,8 +1,11 @@
 import { useState } from "react";
-import { registerUser } from "../services/auth.js";
+import { registerUser } from "../../services/auth.js";
+import { useHistory } from 'react-router-dom';
 
 function SignUp() {
   const [input, setInput] = useState({});
+
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,6 +19,7 @@ function SignUp() {
     e.preventDefault();
     let res = await registerUser(input);
     console.log(res);
+    history.push("/login")
   };
 
   return (

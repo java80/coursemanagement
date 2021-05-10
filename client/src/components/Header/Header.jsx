@@ -16,7 +16,7 @@ export default function Header(props) {
           <li>
           <Link to='/lessons'>lessons</Link>
           </li>
-          <li> {props.currentUser && props.currentUser}</li>
+          <li> {props.currentUser && props.currentUser.email}</li>
         </ul>
         
        

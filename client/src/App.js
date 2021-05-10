@@ -15,6 +15,7 @@ function App() {
   }, []);
   const verify = async () => {
     let user = await verifyUser()
+    console.log(user)
     setCurrentUser(user)
   }
   return (
