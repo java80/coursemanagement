@@ -67,7 +67,7 @@ _The **Project Title** CourseManagment_
 
 - Tablet Resource Index
 
-![wireframe](https://user-images.githubusercontent.com/2756826/117493029-6c9e1800-af40-11eb-96d2-272b11730835.png)
+![wireframe](https://user-images.githubusercontent.com/2756826/117583185-ba975500-b0d3-11eb-97f2-b25fc953f307.png)
 
 - Mobile Resource Index
 
@@ -75,7 +75,7 @@ _The **Project Title** CourseManagment_
 
 > Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
 
-![Component Tree Sample](https://user-images.githubusercontent.com/2756826/117494102-e08cf000-af41-11eb-8284-c9599ce12de3.png)
+![Component Tree Sample](https://user-images.githubusercontent.com/2756826/117583188-c125cc80-b0d3-11eb-82cd-47e819741ce7.png)
 
 #### Component Architecture
 
