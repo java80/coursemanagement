@@ -1,9 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Footer() {
+export default function Header(props) {
   return (
-    <footer>
-      &copy; You teach, 2021
-    </footer>
+    <header>
+      <Link to='/'>
+        <h1>You Teach App</h1>
+      </Link>
+      <hr />
+      <div className='nav-links'>
+        <ul>
+          <li>
+          <Link to='/courses'>Courses</Link>
+          </li>
+          <li>
+          <Link to='/lessons'>lessons</Link>
+          </li>
+          <li> {props.currentUser && props.currentUser}</li>
+        </ul>
+        
+       
+      </div>
+    </header>
   )
 }
