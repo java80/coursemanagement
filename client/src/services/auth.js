@@ -36,6 +36,7 @@ export const createCourse = async (FormData) => {
   const res = await api.post("/courses", { course: FormData });
   return res.data
 }
+
 export const getAllLessons = async () => {
   const res = await api.get("/lessons");
   return res.data;
