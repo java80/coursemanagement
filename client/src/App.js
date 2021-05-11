@@ -23,17 +23,21 @@ function App() {
   }
   return (
     <div className="App">
-      {/* <Header currentUser={currentUser} /> */}
+      <Header currentUser={currentUser} />
       <Switch>
-      {/* <Route path='/' component={Home} /> */}
-        <Route path="/signup">
+       
+      <Route path="/signup">
           <SignUp />
         </Route>
         <Route path="/login">
           <LogIn verify={verify} />
         </Route>
-        <Route path='/courses' component={CourseContainer} />
-        
+        <Route path='/courses'>
+          <CourseContainer /> 
+        </Route>
+        <Route path='/'>
+          <Home/>
+        </Route>
       </Switch>
     </div>
   );

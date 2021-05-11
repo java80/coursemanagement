@@ -60,6 +60,7 @@ export default function CourseEdit(props) {
               onChange={handleChange}
             />
           </label>
+
           <button>Submit</button>
         </form>
       </div>

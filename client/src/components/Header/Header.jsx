@@ -15,9 +15,9 @@ export default function Header(props) {
           <li>
           <Link to='/lessons'>lessons</Link>
           </li> */}
-          <li>
-            <Link to='/signup'>Home</Link>
-          </li>
+          {/* <li>
+            <Link to='/courses'>Home</Link>
+          </li> */}
           <li>
             <Link to='/signup'>Tech Here</Link>
           </li>
