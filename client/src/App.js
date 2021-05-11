@@ -6,6 +6,9 @@ import Header from "./components/Header/Header";
 import SignUp from "./components/SignUp/SignUp";
 import LogIn from "./components/LogIn/LogIn";
 import { verifyUser } from "./services/auth";
+import Home from './screens/Home/Home';
+import CourseContainer from './containers/CourseContainer/CourseContainer';
+
  
 
 function App() {
@@ -22,13 +25,15 @@ function App() {
     <div className="App">
       <Header currentUser={currentUser} />
       <Switch>
+      {/* <Route path='/' component={Home} /> */}
         <Route path="/signup">
           <SignUp />
         </Route>
         <Route path="/login">
           <LogIn verify={verify} />
         </Route>
-  
+        <Route path='/courses' component={CourseContainer} />
+        
       </Switch>
     </div>
   );

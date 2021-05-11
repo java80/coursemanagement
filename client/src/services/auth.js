@@ -23,28 +23,29 @@ export const verifyUser = async () => {
   }
   return false;
 }
-export const getAllCourses = async (id) => {
-  const res = await api.get("/courses");
-  return res.data;
-}
-export const getCourseDetail = async (id) => {
-  const res = await api.get(`/courses/${id}`);
-  return res.data
+// export const getAllCourses = async (id) => {
+//   const res = await api.get("/courses");
+//   return res.data;
+// }
+// export const getCourseDetail = async (id) => {
+//   const res = await api.get(`/courses/${id}`);
+//   return res.data
 
-}
-export const createCourse = async (FormData) => {
-  const res = await api.post("/courses", { course: FormData });
-  return res.data
-}
+// }
+// export const createCourse = async (FormData) => {
+//   const res = await api.post("/courses", { course: FormData });
+//   return res.data
+// }
 
-export const getAllLessons = async () => {
-  const res = await api.get("/lessons");
-  return res.data;
-}
-export const createNewLesson = async (FormData, course_id) => {
-  const res = await api.post(`/courses/${course_id}/lessons`, {
-    lesson: FormData,
-  });
-  return res.data
-}
+// export const getAllLessons = async () => {
+//   const res = await api.get("/lessons");
+//   return res.data;
+// }
+// export const createNewLesson = async (FormData, course_id) => {
+//   const res = await api.post(`/courses/${course_id}/lessons`, {
+//     lesson: FormData,
+//   });
+//   return res.data
+// }
 
+export default api;
