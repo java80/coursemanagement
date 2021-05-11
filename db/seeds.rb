@@ -50,7 +50,51 @@ course_list = [
   },
 ]
 
+lesson_list = [
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  },
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  },
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  },
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  },
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  },
+  {
+    lessonname: "Basic 1",
+    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    
+  }
+]
+
+
+
+
+
 course_list.each do |course| 
   Course.create!(course)
 end
+lesson_list.each do|lesson|
+  @lesson = Lesson.new(lesson);
+  @course = Course.find(1)
+  @lesson.course = @course
+  @lesson.save!
+end
 puts "#{course_list.count} courses created!"
+puts "#{lesson_list.count} lessons created!"
