@@ -5,12 +5,12 @@ import Layout from '../../Layouts/Layout';
 
 export default function CourseDetail(props) {
   const [course, setCourse] = useState(null);
-  const [allCourses, removeCourse] = props;
-  const { id } = useParams;
+  const { allCourses, removeCourse } = props;
+  const { id } = useParams();
   
   useEffect(() => {
     
-    if (allCourses.length) {
+    if (allCourses.length > 0) {
       const oneCourse = allCourses.find((course) => course.id === Number(id));
       setCourse(oneCourse);
     }

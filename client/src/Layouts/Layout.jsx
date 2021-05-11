@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer'
 export default function Layout(props) {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <main className="home-main">
         {props.children}
       </main>

@@ -21,7 +21,7 @@ export default function Courses(props) {
           </React.Fragment>
         ))}
       </div>
-      <Link to="/courses/new"><button>New course</button></Link>
+      <Link to="/courses/courses"><button>New course</button></Link>
     </Layout>
   )
 }
