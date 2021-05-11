@@ -36,7 +36,7 @@ export default function CourseCreate(props) {
               onChange = {handleChange}
           />
           </label>
-          <label> Name:
+          <label> Image Url:
            <input
               type="text"
               name="imageurl"
