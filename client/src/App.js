@@ -23,7 +23,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Header currentUser={currentUser} />
+      {/* <Header currentUser={currentUser} /> */}
       <Switch>
       {/* <Route path='/' component={Home} /> */}
         <Route path="/signup">
