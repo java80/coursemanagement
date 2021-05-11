@@ -14,7 +14,11 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+<<<<<<< HEAD
     render json: @course
+=======
+    # render json: @course, include: [:courses]
+>>>>>>> d9cf05addfe1a7735b677ed335259eba361a1074
   end
 
   def create
