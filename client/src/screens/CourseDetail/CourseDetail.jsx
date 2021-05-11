@@ -12,15 +12,13 @@ export default function CourseDetail(props) {
     
     if (allCourses.length) {
       const oneCourse = allCourses.find((course) => course.id === Number(id));
-      setCourse(oneCourse)
+      setCourse(oneCourse);
     }
 
   },[allCourses,id])
 
-    
-
-
   return (
+    <Layout>
     <div className="course-details">
       {
         course &&
@@ -32,10 +30,9 @@ export default function CourseDetail(props) {
           <Link to={`/courses/${course.id}/edit`}><button>Update</button></Link>
           <button onClick={() => removeCourse(course.id)}>Delete</button>
         </div>
-
-
       }
       
-    </div>
-  );
+      </div>
+      </Layout>
+  )
 }

@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import Layout from '../../Layouts/Layout';
 
 export default function CourseCreate(props) {
-  const [formData, setFormData] = useState({
+  const [formCourseData, setFormCourseData] = useState({
     name: "",
     imageurl: "",
     description: "",
     category: ""
   });
-  const { name, imagurl, description, category } = formData;
+  const { name, imagurl, description, category } = formCourseData;
   const { createCourse } = props
   
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormCourseData(prevState => ({
       ...prevState,
       [name]: value
 
@@ -25,7 +25,7 @@ export default function CourseCreate(props) {
     <div className = "form-container">
         <form onSubmit={(e) => {
           e.preventDefault()
-          createCourse(formData);
+          createCourse(formCourseData);
         }}>
           <h3> Create Course</h3>
           <label> Name:
