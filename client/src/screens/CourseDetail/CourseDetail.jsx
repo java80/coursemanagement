@@ -14,9 +14,10 @@ export default function CourseDetail(props) {
       const oneCourse = allCourses.find((course) => course.id === Number(id));
       setCourse(oneCourse);
     }
-
-  },[allCourses,id])
-
+    
+  }, [allCourses, id])
+  
+  
   return (
     <Layout>
     <div className="course-details">
