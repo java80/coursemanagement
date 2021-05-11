@@ -3,8 +3,8 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import CourseCreate from '../../screens/CourseCreate/CourseCreate';
 import CourseDetail from '../../screens/CourseDetail/CourseDetail';
 import CourseEdit from '../../screens/CourseEdit/courseEdit';
-import Courses from '../../screens/Courses/courses';
-import { getAllCourses, deleteCourse, postCourse, putCourse } from '../../services/courses';
+import Courses from '../../screens/Courses/Courses';
+import { getAllCourses, deleteCourse, postCourse, putCourse,getOneCourse } from '../../services/courses';
 
 export default function CourseContainer(props) {
   const [allCourses, setAllCourses] = useState([]);
@@ -53,7 +53,7 @@ export default function CourseContainer(props) {
         </Route>
         <Route path='/courses/:id'>
           <CourseDetail
-            CourseDetail={allCourses}
+            allCourses={allCourses}
             removeCourse={removeCourse}
           />
         </Route>

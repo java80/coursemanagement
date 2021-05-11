@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 export default function Header(props) {
   return (
     <header>
-      <Link to='/home'>
+      {/* <Link to='/home'>
        
-      </Link>
+      </Link> */}
       <div className='nav-links'>
         <ul>
           {/* <li>
@@ -15,9 +15,9 @@ export default function Header(props) {
           <li>
           <Link to='/lessons'>lessons</Link>
           </li> */}
-          <li>
-            <Link to='/signup'>Home</Link>
-          </li>
+          {/* <li>
+            <Link to='/courses'>Home</Link>
+          </li> */}
           <li>
             <Link to='/signup'>Tech Here</Link>
           </li>

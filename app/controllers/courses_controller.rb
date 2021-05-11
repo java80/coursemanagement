@@ -1,6 +1,12 @@
 class CoursesController < ApplicationController
   #skip_before_action :authenticate_user!, only: %i[index show]
   #before_action :set_course, only:%i[show update destroy]
+
+  def all_Courses
+    @courses = Course.all
+
+    render json: @courses, include: [:lesson]
+  end
   def index
     @courses = Course.all
     render json: @courses
@@ -8,7 +14,7 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
-    # render json: @course, include: [:courses]
+    render json: @course
   end
 
   def create
