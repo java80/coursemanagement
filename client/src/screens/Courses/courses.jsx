@@ -12,16 +12,16 @@ export default function Courses(props) {
           <React.Fragment key={course.id}>
             <Link to={`/courses/${course.id}`}>
               <Card
-                title={course.name}
-                image={course.imageurl}
-                description={course.breed}
+                name={course.name}
+                imageurl={course.imageurl}
+                description={course.description}
                 category={course.category}
               />
             </Link>
           </React.Fragment>
         ))}
       </div>
-      <Link to="/courses/courses"><button>New course</button></Link>
+      <Link to="/courses/new"><button>New course</button></Link>
     </Layout>
   )
 }
