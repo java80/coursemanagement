@@ -9,12 +9,12 @@ export const getOneLesson = async (id) => {
   return res.data;
 }
 
-export const PostLesson = async (lessonData) => {
+export const postLesson = async (lessonData) => {
   const res = await api.post('/lessons', lessonData);
   return res.data;
 }
 
-export const PutLesson = async (id, lessonData) => {
+export const putLesson = async (id, lessonData) => {
   const res = await api.put(`/dogs/${id}`, lessonData);
   return res.data;
 }
