@@ -3,7 +3,7 @@ import { Route, Switch, useHistory } from "react-router-dom";
 import CourseCreate from '../../screens/CourseCreate/CourseCreate';
 import CourseDetail from '../../screens/CourseDetail/CourseDetail';
 import CourseEdit from '../../screens/CourseEdit/courseEdit';
-import Courses from '../../screens/Courses/Courses';
+import Courses from '../../screens/Courses/courses';
 import { getAllCourses, deleteCourse, postCourse, putCourse,getOneCourse } from '../../services/courses';
 
 export default function CourseContainer(props) {

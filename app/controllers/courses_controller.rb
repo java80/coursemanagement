@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
     @course.destroy
-    render json: {message: "#{course.name} has been deleted"}
+    render json: {message: "#{@course.name} has been deleted"}
   end
   private
   def set_course
