@@ -1,20 +1,20 @@
-class CoursesController < ApplicationController
-  #skip_before_action :authenticate_user!, only: %i[index show]
-  #before_action :set_course, only:%i[show update destroy]
+class CoursesController < ApiController
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_course, only:%i[show update destroy]
 
   def all_Courses
     @courses = Course.all
 
-    render json: @courses, include: [:lesson]
+    render json: @courses
   end
   def index
     @courses = Course.all
-    render json: @courses
+    render json: @courses, include: [:lessons]
   end
 
   def show
     @course = Course.find(params[:id])
-    render json: @course
+    render json: @course, include: [:lessons]
   end
 
   def create

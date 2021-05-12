@@ -1,7 +1,7 @@
 // import api from './api-config';
 import api from './auth';
-export const getAllLesson = async () => {
-  const res = await api.get('/lessons');
+export const getAllLesson = async (id) => {
+  const res = await api.get(`/courses/${id}/lessons`);
   return res.data;
 }
 
@@ -10,8 +10,8 @@ export const getOneLesson = async (id) => {
   return res.data;
 }
 
-export const postLesson = async (lessonData) => {
-  const res = await api.post('/lessons', lessonData);
+export const postLesson = async (lessonData, course_id) => {
+  const res = await api.post(`/courses/${course_id}/lessons`, lessonData);
   return res.data;
 }
 

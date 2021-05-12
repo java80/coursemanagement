@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { loginUser } from "../../services/auth";
+import { useHistory } from "react-router-dom";
 
-function LogIn(props) {
+const LogIn = () => {
   const [input, setInput] = useState({});
+  const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -12,11 +14,17 @@ function LogIn(props) {
     }));
   };
 
+  const redirectToHome = ()=> {
+    return history.push({
+      pathname: '/',
+    });
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await loginUser(input);
-    console.log(res);
-    props.verify();
+
+    await loginUser(input, redirectToHome);
+    history.push('/courses')
   };
 
   return (

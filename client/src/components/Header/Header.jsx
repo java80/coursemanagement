@@ -27,6 +27,9 @@ export default function Header(props) {
           <li>
             <Link to='/login'>Log In</Link>
           </li>
+          <li>
+            <Link to='/sign_out'>Log Out</Link>
+          </li>
           <li>  {props.currentUser && props.currentUser.email}</li>
         </ul>
         
