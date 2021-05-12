@@ -8,6 +8,7 @@ import LogIn from "./components/LogIn/LogIn";
 import { verifyUser } from "./services/auth";
 import Home from './screens/Home/Home';
 import CourseContainer from './containers/CourseContainer/CourseContainer';
+import LessonContainer from './containers/LessonContainer/LessonContainer';
 
  
 
@@ -35,9 +36,13 @@ function App() {
         <Route path='/courses'>
           <CourseContainer /> 
         </Route>
-        <Route path='/'>
-          <Home/>
+        <Route path='/lessons'>
+         
         </Route>
+
+        <Route path='/'>
+          <Home />
+         </Route>
       </Switch>
     </div>
   );
