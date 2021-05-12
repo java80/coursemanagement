@@ -1,10 +1,26 @@
+// import axios from "axios";
+// const baseUrl = "http://localhost:3000";
+// const api = axios.create({
+//   baseURL: baseUrl,
+// });
+
+
 import axios from "axios";
 
-const baseUrl = "http://localhost:3000";
-const api = axios.create({
-  baseURL: baseUrl,
-});
+let apiUrl;
+const apiUrls = {
+  development: "http://localhost:3000",
+  production: "https://quiet-temple-96945.herokuapp.com/",
+};
+if (window.location.hostname === "localhost") {
+  apiUrl = apiUrls.development;
+} else {
+  apiUrl = apiUrls.production;
+}
 
+const api = axios.create({
+  baseURL: apiUrl,
+});
 export const registerUser = async (FormData) => {
   const res = await api.post("/users", FormData);
   return res.data;
