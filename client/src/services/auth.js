@@ -4,13 +4,12 @@
 //   baseURL: baseUrl,
 // });
 
-
 import axios from "axios";
 
 let apiUrl;
 const apiUrls = {
   development: "http://localhost:3000",
-  production: "https://quiet-temple-96945.herokuapp.com/",
+  production: "https://myyoutech.herokuapp.com",
 };
 if (window.location.hostname === "localhost") {
   apiUrl = apiUrls.development;
