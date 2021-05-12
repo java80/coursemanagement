@@ -6,6 +6,7 @@
 
 
 import axios from "axios";
+
 let apiUrl;
 const apiUrls = {
   development: "http://localhost:3000",
@@ -16,28 +17,38 @@ if (window.location.hostname === "localhost") {
 } else {
   apiUrl = apiUrls.production;
 }
+
 const api = axios.create({
   baseURL: apiUrl,
 });
 export const registerUser = async (FormData) => {
   const res = await api.post("/users", FormData);
-  return res.data
-}
-export const loginUser = async (FormData) => {
+  return res.data;
+};
+
+export const loginUser = async (FormData, redirectToHome) => {
   const res = await api.post("api/v1/auth", FormData);
   localStorage.setItem("authToken", res.data.token);
   api.defaults.headers.common.authorization = `Bearer ${res.data.token}`;
-  return res.data;
-}
+  redirectToHome();
+};
+
+export const logoutUser = async (redirectToHome) => {
+  const res = await api.post("api/v1/logout");
+  localStorage.removeItem("authToken", res.data.token);
+  redirectToHome();
+};
+
 export const verifyUser = async () => {
   const token = localStorage.getItem("authToken");
+  console.log("token", token);
   if (token) {
     api.defaults.headers.common.authorization = `Bearer ${token}`;
     const res = await api.get("/api/v1/auth");
-    return res.data
+    return res.data;
   }
   return false;
-}
+};
 // export const getAllCourses = async (id) => {
 //   const res = await api.get("/courses");
 //   return res.data;

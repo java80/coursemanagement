@@ -4,15 +4,17 @@ import CourseCreate from '../../screens/CourseCreate/CourseCreate';
 import CourseDetail from '../../screens/CourseDetail/CourseDetail';
 import CourseEdit from '../../screens/CourseEdit/courseEdit';
 import Courses from '../../screens/Courses/courses';
-import { getAllCourses, deleteCourse, postCourse, putCourse,getOneCourse } from '../../services/courses';
+import { getAllCourses, deleteCourse, postCourse, putCourse, getOneCourse } from '../../services/courses';
 
 export default function CourseContainer(props) {
   const [allCourses, setAllCourses] = useState([]);
+  const [toggleCourse, setToggleCourses] = useState(false)
   const history = useHistory();
 
   useEffect(() => {
     fetchCourses();
-  }, [])
+  }, [toggleCourse])
+
   const fetchCourses = async () => {
     const courses = await getAllCourses();
     setAllCourses(courses)
@@ -23,8 +25,9 @@ export default function CourseContainer(props) {
       ...prevState,
       newCourse
     ]));
-    history.push('/courses');
+   // history.push('/courses');
   }
+
   const updateCourse = async (id, courseData) => {
     const updatedCourse = await putCourse(id, courseData);
     setAllCourses(prevState => prevState.map(course => {
@@ -32,6 +35,7 @@ export default function CourseContainer(props) {
     }))
     history.push('/courses')
   }
+
   const removeCourse = async (id) => {
     await deleteCourse(id);
     setAllCourses(prevState => prevState.filter(course => course.id !== id));
@@ -40,21 +44,23 @@ export default function CourseContainer(props) {
   return (
     <>
       <Switch>
-        <Route path='/courses/new'>
+        <Route path='courses/new'>
           <CourseCreate
             createCourse={createCourse}
           />
         </Route>
-        <Route path='/courses/:id/edit'>
+        <Route path='/courses/:id/edit' exact>
           <CourseEdit
             updateCourse={updateCourse}
             allCourses={allCourses}
           />
         </Route>
-        <Route path='/courses/:id'>
+        <Route path='/courses/:id' exact>
           <CourseDetail
             allCourses={allCourses}
             removeCourse={removeCourse}
+            currentUser={props.currentUser}
+            setToggleCourses = {setToggleCourses}
           />
         </Route>
         <Route path='/courses'>

@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import Layout from '../../Layouts/Layout';
+import { postLesson } from '../../services/lessons';
+import { useHistory } from 'react-router-dom';
 
 export default function LessonCreate(props) {
   const [formLessonData, setFormLessonData] = useState({
-    name: "",
+    lessonname: "",
     lessonmaterial: ""
    
   });
-  const { name, Lessonmaterial } = formLessonData;
-  const { createLesson } = props
-  
+  const {lessonname, lessonmaterial } = formLessonData;
+  // const { createLesson } = props
+  const history = useHistory();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormLessonData(prevState => ({
@@ -18,20 +20,22 @@ export default function LessonCreate(props) {
 
     }));
   }
-
+  const handleSubmit =async (e) => {
+    e.preventDefault()
+    const res = await postLesson(formLessonData, props.course_id);
+     console.log(res)
+    props.setToggleCourses(prevState => !prevState)
+  }
   return (
     <Layout>
     <div className = "form-container">
-        <form onSubmit={(e) => {
-          e.preventDefault()
-          createLesson(formLessonData);
-        }}>
+        <form onSubmit= {handleSubmit}>
           <h3> Create Lesson</h3>
           <label> Name:
            <input
               type="text"
-              name="name"
-              value={name}
+              name="lessonname"
+              value={lessonname}
               onChange = {handleChange}
           />
           </label>
@@ -40,7 +44,7 @@ export default function LessonCreate(props) {
            <input
               type="text"
               name="lessonmaterial"
-              value={Lessonmaterial}
+              value={lessonmaterial}
               onChange = {handleChange}
           />
           </label>
