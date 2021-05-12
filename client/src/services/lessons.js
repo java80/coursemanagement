@@ -1,5 +1,6 @@
-import api from './api-config';
-export const getAllLessons = async () => {
+// import api from './api-config';
+import api from './auth';
+export const getAllLesson = async () => {
   const res = await api.get('/lessons');
   return res.data;
 }
@@ -15,7 +16,7 @@ export const postLesson = async (lessonData) => {
 }
 
 export const putLesson = async (id, lessonData) => {
-  const res = await api.put(`/dogs/${id}`, lessonData);
+  const res = await api.put(`/lessons/${id}`, lessonData);
   return res.data;
 }
 export const deleteLesson = async (id) => {

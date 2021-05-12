@@ -20,7 +20,7 @@ export default function Lessons(props) {
           </React.Fragment>
         ))}
       </div>
-      <Link to="/courses/new"><button>New Lesson</button></Link>
+      <Link to="/lessons/new"><button>New Lesson</button></Link>
     </Layout>
   )
 }
