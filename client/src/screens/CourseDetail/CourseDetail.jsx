@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Layout from '../../Layouts/Layout';
 import LessonCreate from '../LessonCreate/LessonCreate';
+import Lessons from '../Lessons/Lessons';
+
 
 
 export default function CourseDetail(props) {
@@ -38,11 +40,15 @@ export default function CourseDetail(props) {
               </>
             }
             {
-              showForm && <LessonCreate course_id={course.id} setToggleCourses = {props.setToggleCourses} />
+              showForm && <LessonCreate course_id={course.id} setShowForm = {setShowForm} setToggleCourses = {props.setToggleCourses} />
             }
-            {
-              course.lessons.map(lesson => <div> {lesson.lessonname} </div>)
-            }
+            <Lessons allLessons={course.lessons }/>
+            {/* {
+              course.lessons.map(lesson =>
+              
+                <div>{lesson.lessonname}
+                </div>)
+            } */}
         </div>
       }
       

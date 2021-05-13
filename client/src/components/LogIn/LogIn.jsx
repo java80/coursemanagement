@@ -2,7 +2,7 @@ import { useState } from "react";
 import { loginUser } from "../../services/auth";
 import { useHistory } from "react-router-dom";
 
-const LogIn = () => {
+const LogIn = (props) => {
   const [input, setInput] = useState({});
   const history = useHistory();
 
@@ -23,7 +23,9 @@ const LogIn = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await loginUser(input, redirectToHome);
+    const res = await loginUser(input, redirectToHome);
+    console.log(res);
+    props.verify();
     history.push('/courses')
   };
 

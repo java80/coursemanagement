@@ -29,13 +29,14 @@ export const loginUser = async (FormData, redirectToHome) => {
   const res = await api.post("api/v1/auth", FormData);
   localStorage.setItem("authToken", res.data.token);
   api.defaults.headers.common.authorization = `Bearer ${res.data.token}`;
-  redirectToHome();
+  return res;
+ // redirectToHome();
 };
 
-export const logoutUser = async (redirectToHome) => {
-  const res = await api.post("api/v1/logout");
-  localStorage.removeItem("authToken", res.data.token);
-  redirectToHome();
+export const logoutUser = async () => {
+  // const res = await api.post("api/v1/logout");
+  localStorage.removeItem("authToken");
+ // redirectToHome();
 };
 
 export const verifyUser = async () => {

@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
+import { logoutUser } from "../../services/auth";
+import { Route, Switch, useHistory } from "react-router-dom";
 export default function Header(props) {
+  const history = useHistory();
+
+  const handleLogout = () => {
+
+    logoutUser();
+    props.setCurrentUser(null)
+    history.push("/")
+  }
   return (
     <header>
       {/* <Link to='/home'>
@@ -28,7 +37,7 @@ export default function Header(props) {
             <Link to='/login'>Log In</Link>
           </li>
           <li>
-            <Link to='/sign_out'>Log Out</Link>
+            <button onClick = {handleLogout}>Log Out</button>
           </li>
           <li>  {props.currentUser && props.currentUser.email}</li>
         </ul>

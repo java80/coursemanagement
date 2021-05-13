@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Card from '../../components/Card/Card';
+import LessonCard from '../../components/LessonCard/LessonCard';
 import Layout from '../../Layouts/Layout';
 
 export default function Lessons(props) {
@@ -8,19 +9,16 @@ export default function Lessons(props) {
   return (
     <Layout>
       <div className="card-list">
-        {allLessons.map(lesson => (
-          <React.Fragment key={lesson.id}>
-            <Link to={`/lessons/${lesson.id}`}>
-              <Card
-                title={lesson.name}
+        { allLessons && allLessons.map(lesson => ( 
+              <LessonCard
+                lessonname={lesson.lessonname}
                 lessonmaterial={lesson.lessonmaterial}
-                
+                key = {lesson.id}
               />
-            </Link>
-          </React.Fragment>
+           
         ))}
       </div>
-      <Link to="/lessons/new"><button>New Lesson</button></Link>
+      {/* <Link to="/lessons/new"><button>New Lesson</button></Link> */}
     </Layout>
   )
 }

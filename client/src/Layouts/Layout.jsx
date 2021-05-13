@@ -9,7 +9,7 @@ export default function Layout(props) {
       <main className="home-main">
         {props.children}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }

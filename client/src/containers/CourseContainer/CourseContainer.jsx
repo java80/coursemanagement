@@ -25,7 +25,7 @@ export default function CourseContainer(props) {
       ...prevState,
       newCourse
     ]));
-   // history.push('/courses');
+    //history.push('/courses');
   }
 
   const updateCourse = async (id, courseData) => {
@@ -44,7 +44,7 @@ export default function CourseContainer(props) {
   return (
     <>
       <Switch>
-        <Route path='courses/new'>
+        <Route path='/courses/new'>
           <CourseCreate
             createCourse={createCourse}
           />
@@ -64,6 +64,11 @@ export default function CourseContainer(props) {
           />
         </Route>
         <Route path='/courses'>
+          <Courses
+            allCourses={allCourses}
+          />
+        </Route>
+        <Route path='/'>
           <Courses
             allCourses={allCourses}
           />

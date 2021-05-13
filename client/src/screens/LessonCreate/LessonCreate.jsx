@@ -20,6 +20,9 @@ export default function LessonCreate(props) {
 
     }));
   }
+  const handleCancel = () => {
+    props.setShowForm(false);
+  }
   const handleSubmit =async (e) => {
     e.preventDefault()
     const res = await postLesson(formLessonData, props.course_id);
@@ -50,6 +53,7 @@ export default function LessonCreate(props) {
           </label>
       
           <button>Submit</button>
+          <button onClick = {handleCancel}>Cancel</button>
       </form>
       </div>
     </Layout>

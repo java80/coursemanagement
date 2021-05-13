@@ -22,9 +22,10 @@ function App() {
     setCurrentUser(user);
   };
 
+
   return (
     <div className="App">
-      <Header currentUser={currentUser} />
+      <Header  currentUser={currentUser} setCurrentUser={setCurrentUser}/>
       <Switch>
         <Route path="/signup" exact>
           <SignUp />
@@ -39,10 +40,10 @@ function App() {
           <LessonContainer />
         </Route>
         <Route path="/login">
-          <LogIn />
+          <LogIn verify={verify} setCurrentUser={setCurrentUser}/>
         </Route>
-        <Route path="/">
-          <Home />
+        <Route path="/" exact>
+          <Home currentUser={currentUser}/>
         </Route>
       </Switch>
     </div>
