@@ -3,18 +3,36 @@ import { registerUser } from "../../services/auth.js";
 import { useHistory } from 'react-router-dom';
 
 function SignUp() {
-  const [input, setInput] = useState({});
+  const [input, setInput] = useState({is_student:true});
 
   const history = useHistory();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (e.target.type === "checkbox") {
+      setInput((prevState) => ({
+        ...prevState,
+        [name]: e.target.checked ? true : false
+      }));
+    }
+    else
+    {
+      setInput((prevState) => ({
+        ...prevState,
+        [name]: value,
+      }));
+      }
+    
+  };
+  const handleCheck = (e) => {
+    e.preventDefault();
+    const { name, checked } = e.target;
+    console.log(checked);
     setInput((prevState) => ({
       ...prevState,
-      [name]: value,
+      [name]: checked === "on" ? true : false
     }));
-  };
-
+ }
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await registerUser(input);
@@ -32,6 +50,8 @@ function SignUp() {
         <input name="password" type="password" />
         <label>Password Confirmation</label>
         <input name="password_confirmation" type="password" />
+        <label> A Student? </label>
+        <input name = "is_student" type = "checkbox" checked ={input.is_student} />
         <button type="submit">Sign UP</button>
       </form>
     </div>

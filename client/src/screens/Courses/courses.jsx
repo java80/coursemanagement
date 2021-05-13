@@ -7,7 +7,7 @@ export default function Courses(props) {
   const {allCourses } = props
   return (
     <Layout>
-      
+       
       <div className="card-list">
         {allCourses.map(course => (
           <React.Fragment key={course.id}>
@@ -22,7 +22,11 @@ export default function Courses(props) {
           </React.Fragment>
         ))}
       </div>
-      <Link to="/courses/new"><button>New course</button></Link>
+      {
+        props.currentUser && !props.currentUser.is_student &&
+     
+        <Link to="/courses/new"><button>New course</button></Link>
+      }
     </Layout>
   )
 }

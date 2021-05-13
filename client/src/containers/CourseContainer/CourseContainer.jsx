@@ -64,12 +64,12 @@ export default function CourseContainer(props) {
           />
         </Route>
         <Route path='/courses'>
-          <Courses
+          <Courses  currentUser={props.currentUser}
             allCourses={allCourses}
           />
         </Route>
         <Route path='/'>
-          <Courses
+          <Courses  currentUser={props.currentUser}
             allCourses={allCourses}
           />
         </Route>

@@ -10,6 +10,6 @@ def create
   end
 private
 def sign_up_params
-    params.permit(:email, :password, :password_confirmation)
+    params.permit(:email, :password, :password_confirmation,:is_student)
   end
 end

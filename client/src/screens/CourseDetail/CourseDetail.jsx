@@ -32,7 +32,7 @@ export default function CourseDetail(props) {
           <img src={course.imageurl} alt={course.name} />
           <p>{course.description}</p>
             <p>{course.category}</p>
-            {props.currentUser &&
+            {props.currentUser && !props.currentUser.is_student &&
               <>
           <Link to={`/courses/${course.id}/edit`}><button>Update</button></Link>
             <button onClick={() => removeCourse(course.id)}>Delete</button>
