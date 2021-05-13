@@ -18,17 +18,11 @@ export default function Header(props) {
       </Link> */}
       <div className='nav-links'>
         <ul>
-          {/* <li>
-          <Link to='/courses'>Courses</Link>
+        <li>
+            <Link to='/'> Home</Link>
           </li>
           <li>
-          <Link to='/lessons'>lessons</Link>
-          </li> */}
-          {/* <li>
-            <Link to='/courses'>Home</Link>
-          </li> */}
-          <li>
-            <Link to='/signup'>Tech Here</Link>
+            <Link to='/signup'>Teach Here</Link>
           </li>
           <li>
             <Link to='/signup'>Sign Up</Link>
@@ -37,7 +31,8 @@ export default function Header(props) {
             <Link to='/login'>Log In</Link>
           </li>
           <li>
-            <button onClick = {handleLogout}>Log Out</button>
+           
+            <Link onClick = {handleLogout} >logout</Link>
           </li>
           <li>  {props.currentUser && props.currentUser.email}</li>
         </ul>

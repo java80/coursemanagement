@@ -23,16 +23,7 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 .nav-links ul {
   list-style-type: none;
   margin: 20px;
@@ -40,7 +31,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
   
 }
@@ -49,7 +40,7 @@
   
   background-color: rgb(0, 21, 255);
   color: white;
-  padding: 2em 1.5em;
+  padding: 1em 1.5em;
   text-decoration: none;
 
   
@@ -100,4 +91,23 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+@media screen and (max-width:700px){
+  .card-list{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+  
+  }
+}
+
+@media screen and (max-width:700px){
+  .nav-links ul{
+    
+    display: flex;
+    flex-direction: column;
+    row-gap:20vh
+  
+  } 
 }
