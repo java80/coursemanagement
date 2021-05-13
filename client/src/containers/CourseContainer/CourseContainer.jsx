@@ -25,7 +25,7 @@ export default function CourseContainer(props) {
       ...prevState,
       newCourse
     ]));
-    //history.push('/courses');
+    history.push('/courses');
   }
 
   const updateCourse = async (id, courseData) => {
