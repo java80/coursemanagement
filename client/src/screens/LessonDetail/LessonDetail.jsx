@@ -23,7 +23,7 @@ export default function LessonDetail(props) {
       {
         lesson &&
         <div className="card">
-          <h3> {lesson.name}</h3>
+          <h3> {lesson.lessonname}</h3>
           <p>{lesson.lessonmaterial}</p>
           <Link to={`/lessons/${lesson.id}/edit`}><button>Update</button></Link>
           <button onClick={() => removeLesson(lesson.id)}>Delete</button>

@@ -46,10 +46,10 @@ export default function LessonCreate(props) {
           <label> Lesson Material:
           
            <input
-              // type="text"
-              // name="lessonmaterial"
-              // value={lessonmaterial}
-              // onChange = {handleChange}
+              type="text"
+              name="lessonmaterial"
+              value={lessonmaterial}
+              onChange = {handleChange}
               
           />
           </label>

@@ -55,7 +55,7 @@ export default function CourseEdit(props) {
           <label>Lesson Material:
             <input
               type="text"
-              name="description"
+              name="lessonmaterial"
               value={lessonmaterial}
               onChange={handleChange}
             />
