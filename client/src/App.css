@@ -71,6 +71,9 @@ course-details, .form-container {
 .App-link {
   color: #61dafb;
 }
+.sign-up{
+  background-color: #8a6b6b
+}
 
 @keyframes App-logo-spin {
   from {
@@ -88,7 +91,7 @@ button {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
 }

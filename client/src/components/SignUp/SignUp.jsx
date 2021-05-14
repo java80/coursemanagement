@@ -33,7 +33,7 @@ function SignUp() {
   };
 
   return (
-    <div>
+    <div className ="sign-up">
       <h1>Sign Up</h1>
       <form onChange={handleChange} onSubmit={handleSubmit}>
         <label>Email</label>
