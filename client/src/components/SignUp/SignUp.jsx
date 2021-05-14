@@ -24,15 +24,7 @@ function SignUp() {
       }
     
   };
-  const handleCheck = (e) => {
-    e.preventDefault();
-    const { name, checked } = e.target;
-    console.log(checked);
-    setInput((prevState) => ({
-      ...prevState,
-      [name]: checked === "on" ? true : false
-    }));
- }
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     let res = await registerUser(input);
