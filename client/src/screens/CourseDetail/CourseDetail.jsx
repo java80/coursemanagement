@@ -43,12 +43,7 @@ export default function CourseDetail(props) {
               showForm && <LessonCreate course_id={course.id} setShowForm = {setShowForm} setToggleCourses = {props.setToggleCourses} />
             }
             <Lessons allLessons={course.lessons }/>
-            {/* {
-              course.lessons.map(lesson =>
-              
-                <div>{lesson.lessonname}
-                </div>)
-            } */}
+           
         </div>
       }
       

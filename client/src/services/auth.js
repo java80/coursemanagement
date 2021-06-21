@@ -30,13 +30,13 @@ export const loginUser = async (FormData, redirectToHome) => {
   localStorage.setItem("authToken", res.data.token);
   api.defaults.headers.common.authorization = `Bearer ${res.data.token}`;
   return res;
- // redirectToHome();
+ //redirectToHome();
 };
 
 export const logoutUser = async () => {
-  // const res = await api.post("api/v1/logout");
+  
   localStorage.removeItem("authToken");
- // redirectToHome();
+ 
 };
 
 export const verifyUser = async () => {
@@ -49,29 +49,6 @@ export const verifyUser = async () => {
   }
   return false;
 };
-// export const getAllCourses = async (id) => {
-//   const res = await api.get("/courses");
-//   return res.data;
-// }
-// export const getCourseDetail = async (id) => {
-//   const res = await api.get(`/courses/${id}`);
-//   return res.data
 
-// }
-// export const createCourse = async (FormData) => {
-//   const res = await api.post("/courses", { course: FormData });
-//   return res.data
-// }
-
-// export const getAllLessons = async () => {
-//   const res = await api.get("/lessons");
-//   return res.data;
-// }
-// export const createNewLesson = async (FormData, course_id) => {
-//   const res = await api.post(`/courses/${course_id}/lessons`, {
-//     lesson: FormData,
-//   });
-//   return res.data
-// }
 
 export default api;
