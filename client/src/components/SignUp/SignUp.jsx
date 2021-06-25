@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../../services/auth.js";
 import { useHistory } from 'react-router-dom';
+import { image1 } from "../../assets/images";
 
 function SignUp() {
   const [input, setInput] = useState({is_student:true});
