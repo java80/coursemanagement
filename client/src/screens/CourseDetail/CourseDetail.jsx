@@ -77,7 +77,7 @@ export default function CourseDetail(props) {
                 </tr>
               </tbody>
             </table>
-            )
+            
           </div>
         </div>
       </div>
