@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Card from "../../components/Card/Card";
 import Layout from "../../Layouts/Layout";
-
 export default function Courses(props) {
   const { allCourses } = props;
   console.log("all courses", allCourses);
