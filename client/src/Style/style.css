@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  width: 100%;
+  font-size: 100%;
+}
+
+@media screen and (max-width: 992px) {
+  html {
+    font-size: 98%;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  html {
+    font-size: 96%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  html {
+    font-size: 94%;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  html {
+    font-size: 92%;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  html {
+    font-size: 88%;
+  }
+}
+
+.themeBtn {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.4rem;
+  background: -webkit-gradient(linear, left top, right top, from(#1e7bfa), to(#005ce6));
+  background: linear-gradient(90deg, #1e7bfa, #005ce6 100%);
+  color: #fff;
+  border-radius: 6px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.themeLine {
+  border-bottom: 3px solid #1e7bfa;
+  font-weight: 600;
+}
+
+.headerContainer {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+  width: 100%;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+  z-index: 10000;
+  background: -webkit-gradient(linear, left top, right top, from(#1e7bfa), to(#005ce6));
+  background: linear-gradient(90deg, #1e7bfa, #005ce6 100%);
+}
+
+.headerContainer .innerHeader {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0rem 1rem;
+  height: 60px;
+}
+
+.headerContainer .innerHeader .logo {
+  letter-spacing: 1.2px;
+}
+
+.headerContainer ul li a {
+  font-size: 1.1rem;
+  letter-spacing: 0.8px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.headerContainer ul .active {
+  color: #fff;
+  text-shadow: 1px 1px 10px #acacac;
+}
+
+.headerContainer.sticky {
+  position: fixed;
+  margin-top: 0rem;
+  background-color: #005ce6;
+}
+
+.headerContainer.sticky ul li a {
+  color: #fff;
+}
+
+.home-main .homeHeading {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.cardList {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.cardInner_div {
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 10px 5px #eee;
+          box-shadow: 0 0 10px 5px #eee;
+  -webkit-transition: 0.6s all;
+  transition: 0.6s all;
+  border-top: 2px solid #1e7bfa;
+}
+
+.cardInner_div img {
+  width: 100%;
+  max-height: 210px;
+}
+
+.cardInner_div h6 {
+  font-size: 0.9rem;
+}
+
+.cardInner_div .lastText {
+  background: -webkit-gradient(linear, left top, right top, from(#1e7bfa), to(#005ce6));
+  background: linear-gradient(90deg, #1e7bfa, #005ce6 100%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.cardInner_div:hover {
+  -webkit-box-shadow: 1px 1px 20px 5px #e4e4e4;
+          box-shadow: 1px 1px 20px 5px #e4e4e4;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  border-top: 3px solid #1e7bfa;
+}
+
+.addUpdateLesson {
+  margin-top: 5rem;
+}
+
+.addUpdateLesson .radiusBorder {
+  border-radius: 0.4rem;
+}
+
+.addUpdateLesson .btnContainer button {
+  border-radius: 4px;
+  border: 2px solid #1e7bfa;
+}
+
+.addUpdateLesson .btnContainer .update, .addUpdateLesson .btnContainer .add {
+  background: -webkit-gradient(linear, left top, right top, from(#1e7bfa), to(#005ce6));
+  background: linear-gradient(90deg, #1e7bfa, #005ce6 100%);
+}
+
+.addUpdateLesson .btnContainer .delete {
+  color: #1e7bfa;
+  background: transparent;
+}
+
+.addUpdateLesson .imgContaineradd img {
+  border-radius: 4px;
+}
+/*# sourceMappingURL=style.css.map */

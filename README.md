@@ -73,7 +73,7 @@ _The **Project Title** CourseManagment_
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
+> 
 
 ![Component Tree Sample](https://user-images.githubusercontent.com/2756826/117583188-c125cc80-b0d3-11eb-82cd-47e819741ce7.png)
 
@@ -90,6 +90,7 @@ src
       |__ images
       |__ mockups
 |__ components/
+      |__ Header.jsx
       |__ Header.jsx
 |__ services/
 

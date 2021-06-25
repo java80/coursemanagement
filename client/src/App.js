@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import "./Style/style.scss";
 import "./App.css";
 import { useEffect, useState } from "react";
 import { Switch, Route } from "react-router-dom";
@@ -9,7 +9,7 @@ import { verifyUser } from "./services/auth";
 import Home from "./screens/Home/Home";
 import CourseContainer from "./containers/CourseContainer/CourseContainer";
 import LessonContainer from "./containers/LessonContainer/LessonContainer";
-
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   useEffect(() => {
@@ -22,10 +22,9 @@ function App() {
     setCurrentUser(user);
   };
 
-
   return (
     <div className="App">
-      <Header  currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Switch>
         <Route path="/signup" exact>
           <SignUp />
@@ -40,10 +39,10 @@ function App() {
           <LessonContainer />
         </Route>
         <Route path="/login">
-          <LogIn verify={verify} setCurrentUser={setCurrentUser}/>
+          <LogIn verify={verify} setCurrentUser={setCurrentUser} />
         </Route>
         <Route path="/" exact>
-          <Home currentUser={currentUser}/>
+          <Home currentUser={currentUser} />
         </Route>
       </Switch>
     </div>
