@@ -1,0 +1,40 @@
+.mainDivSignUp {
+	padding: 0rem 1rem;
+	max-width: 1200px;
+	margin: auto;
+}
+
+.signUpContainer {
+	margin-top: 6rem;
+	background-color: #fff;
+	box-shadow: 0 0 10px 5px #eee;
+	border-radius: 8px;
+}
+
+.imgContainer img {
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.imgContainer2 img {
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+@media screen and (min-width: 775px) {
+	.signUpContainer {
+		margin-top: 8rem;
+	}
+	.imgContainer img {
+		border-top-left-radius: 8px;
+		border-bottom-left-radius: 8px;
+	}
+}
+
+.signUpContainer .MuiInput-underline:after {
+	border-bottom: 2px solid rgba(30, 123, 250, 1);
+}
+
+.signUpContainer .MuiFormLabel-root.Mui-focused {
+	color: rgba(30, 123, 250, 1);
+}
