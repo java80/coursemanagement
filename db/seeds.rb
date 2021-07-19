@@ -31,7 +31,7 @@ course_list = [
     name: "Data Structure",
     imageurl: "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191213191344/Why-Data-Structures-and-Algorithms-Are-Important-to-Learn.png",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at.",
-    category: "Computer Sciene"
+    category: "Computer Science"
     
   },
   {
@@ -52,33 +52,20 @@ course_list = [
 
 lesson_list = [
   {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    lessonname: "What is Rails",
+    lessonmaterial: "https://www.youtube.com/watch?v=fmyvWz5TUWg"
     
   },
   {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    lessonname: "Creating a new rails project",
+    lessonmaterial: "https://www.youtube.com/watch?v=zppMfm4fuxM"
     
   },
+  
+  
   {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
-    
-  },
-  {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
-    
-  },
-  {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
-    
-  },
-  {
-    lessonname: "Basic 1",
-    lessonmaterial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Orci a scelerisque purus semper eget duis at tellus at."
+    lessonname: "Hello rails",
+    lessonmaterial: "https://www.youtube.com/watch?v=oyjzi837wME"
     
   }
 ]
@@ -96,5 +83,6 @@ lesson_list.each do|lesson|
   @lesson.course = @course
   @lesson.save!
 end
-puts "#{course_list.count} courses created!"
-puts "#{lesson_list.count} lessons created!"
+
+ puts "#{course_list.count} courses created!"
+# puts "#{lesson_list.count} lessons created!"

@@ -4,6 +4,7 @@ import Card from "../../components/Card/Card";
 import Layout from "../../Layouts/Layout";
 import LessonCreate from "../LessonCreate/LessonCreate";
 import Lessons from "../Lessons/Lessons";
+import ReactPlayer from "react-player";
 
 export default function CourseDetail(props) {
   const [course, setCourse] = useState(null);
@@ -77,7 +78,7 @@ export default function CourseDetail(props) {
           </div>
         </div>
         <table
-          className="table mt-5"
+          className="table mt-8"
           style={{
             height: "500px",
             marginTop: "135px",
@@ -97,7 +98,9 @@ export default function CourseDetail(props) {
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
                     <td>{lesson.lessonname}</td>
-                    <td>{lesson.lessonmaterial }</td>
+                    <td>
+                      <ReactPlayer url={lesson.lessonmaterial} />
+                    </td>
                   </tr>
                 );
               })
