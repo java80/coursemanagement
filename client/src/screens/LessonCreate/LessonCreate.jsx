@@ -43,7 +43,7 @@ export default function LessonCreate(props) {
           />
           </label>
          
-          <label> Lesson Material:
+          <label> Video Link:
           
            <input
               type="text"

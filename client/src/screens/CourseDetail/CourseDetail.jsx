@@ -97,6 +97,7 @@ export default function CourseDetail(props) {
                   <tr key={index}>
                     <th scope="row">{index + 1}</th>
                     <td>{lesson.lessonname}</td>
+                    <td>{lesson.lessonmaterial }</td>
                   </tr>
                 );
               })
