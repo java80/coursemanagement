@@ -86,12 +86,12 @@ export default function CourseDetail(props) {
         >
           <thead className="thead-dark">
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Fundamentals of Reactjs</th>
+              {/* <th scope="col">#</th>
+              <th scope="col"></th> */}
             </tr>
           </thead>
           <tbody>
-            {course ? (
+            {course  && course.lessons?(
               course.lessons.map((lesson, index) => {
                 return (
                   <tr key={index}>
@@ -101,7 +101,7 @@ export default function CourseDetail(props) {
                 );
               })
             ) : (
-              <></>
+              <h1> Updating data</h1>
             )}
           </tbody>
         </table>
