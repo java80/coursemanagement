@@ -19,18 +19,18 @@ export default function LessonDetail(props) {
 
   return (
     <Layout>
-    <div className="lesson-details">
-      {
-        lesson &&
-        <div className="card">
-          <h3> {lesson.lessonname}</h3>
-          <p>{lesson.lessonmaterial}</p>
-          <Link to={`/lessons/${lesson.id}/edit`}><button>Update</button></Link>
-          <button onClick={() => removeLesson(lesson.id)}>Delete</button>
-        </div>
-      }
-      
+      <div className="lesson-details">
+        {lesson && (
+          <div className="card">
+            <h3> {lesson.lessonname}</h3>
+            <p>{lesson.lessonmaterial}</p>
+            <Link to={`/courses/${id}/lessons/${lesson.id}/edit`}>
+              <button>Update</button>
+            </Link>
+            <button onClick={() => removeLesson(lesson.id)}>Delete</button>
+          </div>
+        )}
       </div>
-      </Layout>
-  )
+    </Layout>
+  );
 }

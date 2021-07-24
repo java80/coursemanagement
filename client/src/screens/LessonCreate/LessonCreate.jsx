@@ -33,13 +33,14 @@ export default function LessonCreate(props) {
     <Layout>
     <div className = "form-container">
         <form onSubmit= {handleSubmit}>
-          <h3> Create Lesson</h3>
+          <h3> { props.formTitle }</h3>
           <label> Name:
            <input
               type="text"
               name="lessonname"
               value={lessonname}
-              onChange = {handleChange}
+              onChange={handleChange}
+              required
           />
           </label>
          
@@ -50,7 +51,7 @@ export default function LessonCreate(props) {
               name="lessonmaterial"
               value={lessonmaterial}
               onChange = {handleChange}
-              
+              required
           />
           </label>
       

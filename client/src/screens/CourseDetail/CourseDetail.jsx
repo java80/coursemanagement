@@ -10,6 +10,7 @@ export default function CourseDetail(props) {
   const [course, setCourse] = useState(null);
   const { allCourses, removeCourse } = props;
   const [showForm, setShowForm] = useState(false);
+  const [showupdate, setShowUpdate] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -50,6 +51,16 @@ export default function CourseDetail(props) {
                 course_id={course.id}
                 setShowForm={setShowForm}
                 setToggleCourses={props.setToggleCourses}
+                formTitle={"Create Lesson"}
+              />
+            )}
+
+            {showupdate && (
+              <LessonCreate
+                course_id={course.id}
+                setShowForm={setShowForm}
+                setToggleCourses={props.setToggleCourses}
+                formTitle={"update Lesson"}
               />
             )}
             {course && props.currentUser && !props.currentUser.is_student && (
@@ -92,7 +103,7 @@ export default function CourseDetail(props) {
             </tr>
           </thead>
           <tbody>
-            {course  && course.lessons?(
+            {course && course.lessons ? (
               course.lessons.map((lesson, index) => {
                 return (
                   <tr key={index}>
@@ -100,6 +111,18 @@ export default function CourseDetail(props) {
                     <td>{lesson.lessonname}</td>
                     <td>
                       <ReactPlayer url={lesson.lessonmaterial} />
+                      {/* <Link to={`/courses/${id}/lessons/${lesson.id}/edit`}> */}
+                        <button
+                          onClick={() => setShowUpdate(!showupdate)}
+                          className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
+                        >
+                          Update{" "}
+                        </button>
+                      {/* </Link> */}
+
+                      <button className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm">
+                        Delete{" "}
+                      </button>
                     </td>
                   </tr>
                 );

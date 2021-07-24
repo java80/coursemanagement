@@ -33,7 +33,8 @@ export default function CourseCreate(props) {
               type="text"
               name="name"
               value={name}
-              onChange = {handleChange}
+              onChange={handleChange}
+              required
           />
           </label>
           <label> Image Url:
@@ -41,7 +42,8 @@ export default function CourseCreate(props) {
               type="text"
               name="imageurl"
               value={imagurl}
-              onChange = {handleChange}
+              onChange={handleChange}
+              required
           />
           </label>
           <label> Description:

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../Layouts/Layout';
 
-export default function CourseEdit(props) {
+export default function LessonEdit(props) {
   const [formLessonData, setFormLessonData] = useState({
     name: "",
     lessonmaterial: ""
@@ -21,7 +21,7 @@ export default function CourseEdit(props) {
       const { name, lessonmaterial} = oneLesson;
       setFormLessonData({ name, lessonmaterial});
     }
-    if (allLessons.length) {
+    if (allLessons.length> 0) {
       prefillFormLessonData()
     }
   }, [allLessons, id])

@@ -33,7 +33,7 @@ function App() {
           <CourseContainer currentUser={currentUser} />
         </Route>
         <Route path="/lessons/:id">
-          <LessonContainer />
+          <LessonContainer currentUser={currentUser}/>
         </Route>
         <Route path="/lessons">
           <LessonContainer />

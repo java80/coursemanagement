@@ -46,10 +46,10 @@ export default function LessonContainer(props) {
             createLesson={createLesson}
           />
         </Route>
-        <Route path='/lessons/:id/edit'>
+        <Route path='courses/:id/lessons/:id/edit'>
           <LessonEdit
             updateLesson={updateLesson}
-            allCourses={allLessons}
+            allLessons={allLessons}
           />
         </Route>
         <Route path='/lessons/:id'>

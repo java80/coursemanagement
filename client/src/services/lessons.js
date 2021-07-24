@@ -6,7 +6,7 @@ export const getAllLesson = async (id) => {
 }
 
 export const getOneLesson = async (id) => {
-  const res = await api.get(`/lessons/${id}`);
+  const res = await api.get(`/courses/${id}/lessons/${id}`);
   return res.data;
 }
 
@@ -15,11 +15,11 @@ export const postLesson = async (lessonData, course_id) => {
   return res.data;
 }
 
-export const putLesson = async (id, lessonData) => {
-  const res = await api.put(`/lessons/${id}`, lessonData);
+export const putLesson = async (id,course_id, lessonData) => {
+  const res = await api.put(`/courses/${course_id}/lessons/${id}`, lessonData);
   return res.data;
 }
-export const deleteLesson = async (id) => {
-  const res = await api.delete(`lessons/${id}`);
+export const deleteLesson = async (id,course_id) => {
+  const res = await api.delete(`/courses/${course_id}/lessons/${id}`);
   return res.data
 }
