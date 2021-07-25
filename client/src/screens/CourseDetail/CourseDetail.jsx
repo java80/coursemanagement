@@ -5,12 +5,16 @@ import Layout from "../../Layouts/Layout";
 import LessonCreate from "../LessonCreate/LessonCreate";
 import Lessons from "../Lessons/Lessons";
 import ReactPlayer from "react-player";
+import LessonEdit from "../LessonEdit/LessonEdit";
+import { deleteLesson } from "../../services/lessons";
 
 export default function CourseDetail(props) {
   const [course, setCourse] = useState(null);
   const { allCourses, removeCourse } = props;
   const [showForm, setShowForm] = useState(false);
   const [showupdate, setShowUpdate] = useState(false);
+  const [currentLesson, setCurrentLesson] = useState({});
+  
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,6 +23,19 @@ export default function CourseDetail(props) {
       setCourse(oneCourse);
     }
   }, [allCourses, id]);
+
+  const handleLessonUpdate = (lesson) => {
+    
+    setShowUpdate(!showupdate);
+    setCurrentLesson(lesson)
+
+  }
+  const handleDeleteLesson = async (course_id, lessonId) => {
+     const res = await deleteLesson(
+      course_id,
+      lessonId
+    );
+  }
 
   return (
     <Layout>
@@ -56,11 +73,12 @@ export default function CourseDetail(props) {
             )}
 
             {showupdate && (
-              <LessonCreate
+              <LessonEdit
                 course_id={course.id}
                 setShowForm={setShowForm}
                 setToggleCourses={props.setToggleCourses}
                 formTitle={"update Lesson"}
+                currentLesson = {currentLesson}
               />
             )}
             {course && props.currentUser && !props.currentUser.is_student && (
@@ -113,14 +131,14 @@ export default function CourseDetail(props) {
                       <ReactPlayer url={lesson.lessonmaterial} />
                       {/* <Link to={`/courses/${id}/lessons/${lesson.id}/edit`}> */}
                         <button
-                          onClick={() => setShowUpdate(!showupdate)}
+                          onClick={() => handleLessonUpdate(lesson)}
                           className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
                         >
                           Update{" "}
                         </button>
                       {/* </Link> */}
 
-                      <button className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm">
+                      <button onClick = {()=> handleDeleteLesson(course.id,lesson.id)} className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm">
                         Delete{" "}
                       </button>
                     </td>

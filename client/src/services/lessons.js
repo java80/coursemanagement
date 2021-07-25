@@ -15,11 +15,15 @@ export const postLesson = async (lessonData, course_id) => {
   return res.data;
 }
 
-export const putLesson = async (id,course_id, lessonData) => {
+export const putLesson = async (id, course_id, lessonData) => {
+  console.log("Lessondata",lessonData)
   const res = await api.put(`/courses/${course_id}/lessons/${id}`, lessonData);
   return res.data;
 }
 export const deleteLesson = async (id,course_id) => {
   const res = await api.delete(`/courses/${course_id}/lessons/${id}`);
+   console.log("Lesson delete api call");
   return res.data
+
+ 
 }

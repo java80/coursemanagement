@@ -1,3 +1,3 @@
 class Lesson < ApplicationRecord
-  belongs_to :course, dependent: :destroy
+  belongs_to :course
 end
