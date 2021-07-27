@@ -20,7 +20,7 @@ export const putLesson = async (id, course_id, lessonData) => {
   const res = await api.put(`/courses/${course_id}/lessons/${id}`, lessonData);
   return res.data;
 }
-export const deleteLesson = async (id,course_id) => {
+export const deleteLesson = async (course_id,id) => {
   const res = await api.delete(`/courses/${course_id}/lessons/${id}`);
    console.log("Lesson delete api call");
   return res.data

@@ -10,8 +10,15 @@ import Home from "./screens/Home/Home";
 import CourseContainer from "./containers/CourseContainer/CourseContainer";
 import LessonContainer from "./containers/LessonContainer/LessonContainer";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import Hamburger from "./components/Hamburger/Hamburger";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const authToken = localStorage.getItem("authToken");
+  const clickHamburger = () => {
+    setIsOpen(!isOpen);
+    console.log("setisopne", isOpen);
+  }
   useEffect(() => {
     verify();
   }, []);
@@ -24,7 +31,12 @@ function App() {
 
   return (
     <div className="App">
-      <Header currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      <Header currentUser={currentUser} setCurrentUser={setCurrentUser}
+        authToken={authToken}/>
+      <Hamburger isOpen={isOpen} clickHamburger={clickHamburger}
+        currentUser={currentUser} setCurrentUser = {setCurrentUser}
+      />
+      
       <Switch>
         <Route path="/signup" exact>
           <SignUp />

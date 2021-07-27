@@ -26,7 +26,8 @@ export default function LessonCreate(props) {
   const handleSubmit =async (e) => {
     e.preventDefault()
     const res = await postLesson(formLessonData, props.course_id);
-     console.log(res)
+    console.log(res)
+    props.setShowForm(false);
     props.setToggleCourses(prevState => !prevState)
   }
   return (

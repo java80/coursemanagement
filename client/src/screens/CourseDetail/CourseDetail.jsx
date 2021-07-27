@@ -78,7 +78,8 @@ export default function CourseDetail(props) {
                 setShowForm={setShowForm}
                 setToggleCourses={props.setToggleCourses}
                 formTitle={"update Lesson"}
-                currentLesson = {currentLesson}
+                currentLesson={currentLesson}
+                setShowUpdate = {setShowUpdate}
               />
             )}
             {course && props.currentUser && !props.currentUser.is_student && (
@@ -129,18 +130,24 @@ export default function CourseDetail(props) {
                     <td>{lesson.lessonname}</td>
                     <td>
                       <ReactPlayer url={lesson.lessonmaterial} />
-                      {/* <Link to={`/courses/${id}/lessons/${lesson.id}/edit`}> */}
+                     
+                      {
+                        props.currentUser && !props.currentUser.is_student &&
+                        <>
                         <button
                           onClick={() => handleLessonUpdate(lesson)}
                           className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
                         >
                           Update{" "}
                         </button>
-                      {/* </Link> */}
+                     
 
                       <button onClick = {()=> handleDeleteLesson(course.id,lesson.id)} className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm">
                         Delete{" "}
                       </button>
+                      </>
+                      }
+                        
                     </td>
                   </tr>
                 );

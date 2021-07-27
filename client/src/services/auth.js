@@ -8,7 +8,7 @@ import axios from "axios";
 
 let apiUrl;
 const apiUrls = {
-  development: "http://localhost:3000",
+  development: "https://myyoutech.herokuapp.com",
   production: "https://myyoutech.herokuapp.com",
 };
 if (window.location.hostname === "localhost") {

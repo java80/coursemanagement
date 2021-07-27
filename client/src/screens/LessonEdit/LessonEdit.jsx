@@ -1,80 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import Layout from '../../Layouts/Layout';
-import { putLesson } from '../../services/lessons';
+import React, { useState } from "react";
+import Layout from "../../Layouts/Layout";
+import { putLesson } from "../../services/lessons";
+import { useHistory } from "react-router-dom";
 
 export default function LessonEdit(props) {
+  console.log(props.currentLesson);
   const [formLessonData, setFormLessonData] = useState({
-    name: props.currentLesson.lessonname,
-    lessonmaterial: props.currentLesson.lessonmaterial
-   
+    lessonname: props.currentLesson.lessonname,
+    lessonmaterial: props.currentLesson.lessonmaterial,
   });
-  const { name, lessonmaterial} = formLessonData;
-  const { updateLesson, allLessons } = props;
-  const { id } = useParams();
-
+  const { lessonname, lessonmaterial } = formLessonData;
+  // const { createLesson } = props
+  const history = useHistory();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormLessonData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+  const handleCancel = () => {
+    props.setShowForm(false);
+    props.setShowUpdate(false);
+  };
   const handleSubmit = async (e) => {
-     e.preventDefault();
-  // updateLesson(id, formLessonData);
-    const res =  await putLesson(
+    e.preventDefault();
+    const res = await putLesson(
       props.currentLesson.id,
       props.course_id,
       formLessonData
     );
-    console.log("Res",res)
-  }
-
-  // useEffect(() => {
-  //   const prefillFormLessonData = () => {
-  //     const oneLesson = allLessons.find(lesson => {
-  //       return lesson.id === Number(id);
-  //     })
-  //     const { name, lessonmaterial} = oneLesson;
-  //     setFormLessonData({ name, lessonmaterial});
-  //   }
-  //   if (allLessons.length> 0) {
-  //     prefillFormLessonData()
-  //   }
-  // }, [allLessons, id])
-  console.log(props.currentLesson);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormLessonData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  }
-
+    console.log(res);
+    props.setShowUpdate(false);
+    props.setToggleCourses((prevState) => !prevState);
+  };
   return (
     <Layout>
       <div className="form-container">
-        <form
-          onSubmit={ handleSubmit}
-        >
-          <h3>Update lesson</h3>
+        <form onSubmit={handleSubmit}>
+          <h3> {props.formTitle}</h3>
           <label>
+            {" "}
             Name:
             <input
               type="text"
-              name="name"
-              value={name}
+              name="lessonname"
+              value={lessonname}
               onChange={handleChange}
+              required
             />
           </label>
 
           <label>
-            Lesson Material:
+            {" "}
+            Video Link:
             <input
               type="text"
               name="lessonmaterial"
               value={lessonmaterial}
               onChange={handleChange}
+              required
             />
           </label>
 
           <button>Submit</button>
-          <button>Cancel</button>
+          <button onClick={handleCancel}>Cancel</button>
         </form>
       </div>
     </Layout>
