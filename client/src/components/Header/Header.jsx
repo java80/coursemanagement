@@ -37,7 +37,7 @@ export default function Header(props) {
             Teach App
           </NavLink>
           <GiHamburgerMenu
-            onClick={props.clickHamburger}
+            onClick={props.hamBurgerEvent}
             className="d-block d-md-none pointer"
             color="#fff"
             fontSize="1.5rem"

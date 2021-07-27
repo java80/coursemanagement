@@ -15,10 +15,10 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const authToken = localStorage.getItem("authToken");
-  const clickHamburger = () => {
+  const hamBurgerEvent = () => {
     setIsOpen(!isOpen);
-    console.log("setisopne", isOpen);
-  }
+    console.log("setIsOpen", isOpen);
+  };
   useEffect(() => {
     verify();
   }, []);
@@ -31,12 +31,19 @@ function App() {
 
   return (
     <div className="App">
-      <Header currentUser={currentUser} setCurrentUser={setCurrentUser}
-        authToken={authToken}/>
-      <Hamburger isOpen={isOpen} clickHamburger={clickHamburger}
-        currentUser={currentUser} setCurrentUser = {setCurrentUser}
+      <Header
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        authToken={authToken}
+        hamBurgerEvent={hamBurgerEvent}
       />
-      
+      <Hamburger
+        isOpen={isOpen}
+        hamBurgerEvent={hamBurgerEvent}
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      />
+
       <Switch>
         <Route path="/signup" exact>
           <SignUp />
@@ -45,7 +52,7 @@ function App() {
           <CourseContainer currentUser={currentUser} />
         </Route>
         <Route path="/lessons/:id">
-          <LessonContainer currentUser={currentUser}/>
+          <LessonContainer currentUser={currentUser} />
         </Route>
         <Route path="/lessons">
           <LessonContainer />

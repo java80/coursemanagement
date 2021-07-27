@@ -9,7 +9,14 @@ export default function Courses(props) {
     <Layout>
       <div style={{ marginTop: props.courses && "6rem" }} className="cardList">
         <div className="container-fluid">
-          <div className="row mt-2">
+          <div className="row mt-4">
+            {
+              !allCourses &&
+              <h1 style={{ marginTop: "30px", textAlign: "center" }}>
+                Loading Courses ...
+              </h1>
+            }
+
             {allCourses.map((course, index) => {
               return (
                 <div key={index} className="col-sm-6 col-md-4 col-xl-3 mt-3">

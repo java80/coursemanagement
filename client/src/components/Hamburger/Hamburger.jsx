@@ -3,25 +3,25 @@ import { ImCross } from "react-icons/im";
 import { NavLink } from "react-router-dom";
 import { logoutUser } from "../../services/auth";
 import { useHistory } from "react-router-dom";
-import "./Hamburger.css"
+import "./Hamburger.css";
 
-const Hamburger = ({ isOpen, clickHamburger, currentUser, setCurrentUser }) => {
+const Hamburger = ({ isOpen, hamBurgerEvent, currentUser, setCurrentUser }) => {
   const history = useHistory();
   const handleLogout = () => {
     logoutUser();
     setCurrentUser(null);
-    history.push("/")
+    history.push("/");
   };
   return (
-      <div
-      onClick={clickHamburger}
+    <div
+      onClick={hamBurgerEvent}
       style={{
         opacity: `${isOpen ? "1" : "0"}`,
         top: `${isOpen ? "0%" : "-100%"}`,
       }}
       className="HamburgerContainer"
     >
-      <ImCross onClick={clickHamburger} className="CrossBTn" />
+      <ImCross onClick={hamBurgerEvent} className="CrossBTn" />
       <ul className="list-unstyled">
         <li>
           <NavLink className="text-white text-decoration-none" to="/">
@@ -54,8 +54,7 @@ const Hamburger = ({ isOpen, clickHamburger, currentUser, setCurrentUser }) => {
         <li> {currentUser && currentUser.email}</li>
       </ul>
     </div>
-  
   );
-}
+};
 
-export default Hamburger
+export default Hamburger;
