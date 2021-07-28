@@ -11,7 +11,6 @@ export default function Header(props) {
   console.log("Auth Token from header", authToken);
   const handleLogout = () => {
     logoutUser();
-    // props.setauthToken("");
     localStorage.removeItem("authToken");
     props.setCurrentUser(null);
     history.push("/");
@@ -25,8 +24,6 @@ export default function Header(props) {
 
   return (
     <header>
-      {/* <Link to='/home'>
-      </Link> */}
       <div className="headerContainer">
         <div className="innerHeader d-flex justify-content-between align-items-center">
           <NavLink
@@ -80,7 +77,7 @@ export default function Header(props) {
               </li>
             )}
 
-            <li> {props.currentUser && props.currentUser.email}</li>
+            <li className = "mt-1 px-3 text-white"> {props.currentUser && props.currentUser.email}</li>
           </ul>
         </div>
       </div>

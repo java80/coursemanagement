@@ -6,7 +6,6 @@ export default function LessonCard(props) {
     <div className="card">
       <h3>{lessonname}</h3>
       <h3>{lessonmaterial}</h3>
-      
     </div>
   );
 }

@@ -67,17 +67,6 @@ const LogIn = (props) => {
           </div>
         </div>
       </div>
-      {/*     
-			<div>
-				<h1>Login</h1>
-				<form onChange={handleChange} onSubmit={handleSubmit}>
-					<label>Email</label>
-					<input name="email" type="email" />
-					<label>Password</label>
-					<input name="password" type="password" />
-					<button type="submit">Sign In</button>
-				</form>
-			</div> */}
     </>
   );
 };

@@ -27,3 +27,7 @@ padding: 30px;
   height: 40px;
     border-radius: 5px;
 }
+.home-main h3 {
+  padding-top: 5rem;
+  text-align: center;
+}
