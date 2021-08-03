@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../../Layouts/Layout";
 import { putLesson } from "../../services/lessons";
 import { useHistory } from "react-router-dom";
+import "./LessonEdit.css"
 
 export default function LessonEdit(props) {
   console.log(props.currentLesson);
@@ -62,9 +63,10 @@ export default function LessonEdit(props) {
               required
             />
           </label>
-
-          <button>Submit</button>
-          <button onClick={handleCancel}>Cancel</button>
+          <div className = "lesson-update-button">
+            <button className = "btn btn-primary">Submit</button>
+            <button className = "btn btn-warning" onClick={handleCancel}>Cancel</button>
+          </div>
         </form>
       </div>
     </Layout>

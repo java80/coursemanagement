@@ -6,6 +6,7 @@ import Layout from '../../Layouts/Layout';
 export default function LessonDetail(props) {
   const [lesson, setLesson] = useState(null);
   const [allLessons, removeLesson] = props;
+  
   const { id } = useParams;
   
   useEffect(() => {

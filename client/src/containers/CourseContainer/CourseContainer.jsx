@@ -44,34 +44,27 @@ export default function CourseContainer(props) {
   return (
     <>
       <Switch>
-        <Route path='/courses/new'>
+        <Route path="/courses/new">
           <CourseCreate
             createCourse={createCourse}
           />
         </Route>
-        <Route path='/courses/:id/edit' exact>
-          <CourseEdit
-            updateCourse={updateCourse}
-            allCourses={allCourses}
-          />
+        <Route path="/courses/:id/edit" exact>
+          <CourseEdit updateCourse={updateCourse} allCourses={allCourses} />
         </Route>
-        <Route path='/courses/:id' exact>
+        <Route path="/courses/:id" exact>
           <CourseDetail
             allCourses={allCourses}
             removeCourse={removeCourse}
             currentUser={props.currentUser}
-            setToggleCourses = {setToggleCourses}
+            setToggleCourses={setToggleCourses}
           />
         </Route>
-        <Route path='/courses'>
-          <Courses  currentUser={props.currentUser}
-            allCourses={allCourses}
-          />
+        <Route path="/courses">
+          <Courses currentUser={props.currentUser} allCourses={allCourses} />
         </Route>
-        <Route path='/'>
-          <Courses  currentUser={props.currentUser}
-            allCourses={allCourses}
-          />
+        <Route path="/">
+          <Courses currentUser={props.currentUser} allCourses={allCourses} />
         </Route>
       </Switch>
     </>

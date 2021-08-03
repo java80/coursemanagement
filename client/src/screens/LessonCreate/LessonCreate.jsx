@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Layout from '../../Layouts/Layout';
 import { postLesson } from '../../services/lessons';
 import { useHistory } from 'react-router-dom';
+import "./LessonCreate.css"
+
 
 export default function LessonCreate(props) {
   const [formLessonData, setFormLessonData] = useState({
@@ -21,7 +23,7 @@ export default function LessonCreate(props) {
     }));
   }
   const handleCancel = () => {
-    props.setShowForm(false);
+    props.setShowForm(false)
   }
   const handleSubmit =async (e) => {
     e.preventDefault()
@@ -32,33 +34,39 @@ export default function LessonCreate(props) {
   }
   return (
     <Layout>
-    <div className = "form-container">
-        <form onSubmit= {handleSubmit}>
-          <h3> { props.formTitle }</h3>
-          <label> Name:
-           <input
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <h3> {props.formTitle}</h3>
+          <label>
+            {" "}
+            Name:
+            <input
               type="text"
               name="lessonname"
               value={lessonname}
               onChange={handleChange}
               required
-          />
+            />
           </label>
-         
-          <label> Video Link:
-          
-           <input
+
+          <label>
+            {" "}
+            Video Link:
+            <input
               type="text"
               name="lessonmaterial"
               value={lessonmaterial}
-              onChange = {handleChange}
+              onChange={handleChange}
               required
-          />
+            />
           </label>
-      
-          <button>Submit</button>
-          <button onClick = {handleCancel}>Cancel</button>
-      </form>
+          <div className = "create-lesson-button">
+            <button className="btn btn-primary">Submit</button>
+            <button className="btn btn-warning" onClick={handleCancel}>
+              Cancel
+            </button>
+          </div>
+        </form>
       </div>
     </Layout>
   );

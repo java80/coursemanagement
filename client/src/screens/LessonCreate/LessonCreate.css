@@ -1,0 +1,5 @@
+.create-lesson-button{
+
+  display: flex;
+  gap: 2rem;
+}

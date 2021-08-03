@@ -70,16 +70,13 @@ html {
 	cursor: pointer;
 }
 
-// body {
-// 	height: 200vh;
-// }
 
 .themeLine {
 	border-bottom: 3px solid $themeColor;
 	font-weight: 600;
 }
 
-// NAVBAR START
+
 .headerContainer {
 	position: fixed;
 	left: 0%;
@@ -88,7 +85,7 @@ html {
 	transition: 0.7s;
 	z-index: 10000;
 	@include backGrounds;
-	// padding: 1rem 0rem 0.3rem 0rem;
+	
 
 	.innerHeader {
 		max-width: 1200px;
@@ -127,9 +124,7 @@ html {
 		color: #fff;
 	}
 }
-// NAVBAR END
 
-// HOME PAGE START\
 
 .home-main {
 	.homeHeading {
@@ -137,9 +132,7 @@ html {
 		margin-top: 6rem;
 	}
 }
-// HOME PAGE END
 
-// COURSES PAGE START
 .cardList {
 	max-width: 1200px;
 	margin: auto;
@@ -173,9 +166,7 @@ html {
 	transform: translateY(-5px);
 	border-top: 3px solid $themeColor;
 }
-// COURSES PAGE END
 
-// ADD UPDATE LESSON PAGE START
 .addUpdateLesson {
 	margin-top: 5rem;
 
@@ -202,4 +193,4 @@ html {
 		}
 	}
 }
-// ADD UPDATE LESSON PAGE END
+

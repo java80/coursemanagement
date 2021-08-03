@@ -113,11 +113,6 @@ html {
   color: #fff;
 }
 
-.home-main .homeHeading {
-  text-align: center;
-  margin-top: 6rem;
-}
-
 .cardList {
   max-width: 1200px;
   margin: auto;
@@ -184,3 +179,7 @@ html {
   border-radius: 4px;
 }
 /*# sourceMappingURL=style.css.map */
+
+.button-align button {
+ height: 100vh;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Layout from '../../Layouts/Layout';
+import "./courseEdit.css"
 
 export default function CourseEdit(props) {
   const [formCourseData, setFormCourseData] = useState({
@@ -39,12 +40,15 @@ export default function CourseEdit(props) {
   return (
     <Layout>
       <div className="form-container">
-        <form onSubmit={(e) => {
-          e.preventDefault()
-          updateCourse(id, formCourseData);
-        }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            updateCourse(id, formCourseData);
+          }}
+        >
           <h3>Update Course</h3>
-          <label>Name:
+          <label>
+            Name:
             <input
               type="text"
               name="name"
@@ -52,7 +56,8 @@ export default function CourseEdit(props) {
               onChange={handleChange}
             />
           </label>
-          <label>Image Url:
+          <label>
+            Image Url:
             <input
               type="text"
               name="imageurl"
@@ -60,7 +65,8 @@ export default function CourseEdit(props) {
               onChange={handleChange}
             />
           </label>
-          <label>Description:
+          <label>
+            Description:
             <input
               type="text"
               name="description"
@@ -68,7 +74,8 @@ export default function CourseEdit(props) {
               onChange={handleChange}
             />
           </label>
-          <label>Category:
+          <label>
+            Category:
             <input
               type="text"
               name="category"
@@ -76,9 +83,12 @@ export default function CourseEdit(props) {
               onChange={handleChange}
             />
           </label>
-          <button>Submit</button>
+          <div className = "update-course-button">
+            <button className="btn btn-primary">Submit</button>
+            <button className="btn btn-warning">Cancel</button>
+          </div>
         </form>
       </div>
     </Layout>
-  )
+  );
 }
