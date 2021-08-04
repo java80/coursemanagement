@@ -1,0 +1,12 @@
+@media screen and (max-width: 700px) {
+  .control-table {
+    background-color: red;
+    margin-top: 9px;
+  }
+  .table-class {
+    margin-top: 0px !important;
+  }
+ .html5-video-player {
+    width: 50% !important;
+  }
+}

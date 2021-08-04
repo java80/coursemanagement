@@ -34,7 +34,7 @@ export default function LessonCreate(props) {
   }
   return (
     <Layout>
-      <div className="form-container">
+      <div className="form-container form-lesson">
         <form onSubmit={handleSubmit}>
           <h3> {props.formTitle}</h3>
           <label>

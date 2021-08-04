@@ -7,6 +7,7 @@ import Lessons from "../Lessons/Lessons";
 import ReactPlayer from "react-player";
 import LessonEdit from "../LessonEdit/LessonEdit";
 import { deleteLesson } from "../../services/lessons";
+import "./CourseDetail.css"
 
 export default function CourseDetail(props) {
   const [course, setCourse] = useState(null);
@@ -46,6 +47,7 @@ export default function CourseDetail(props) {
               <div className="row">
                 <div className="imgContainer2 col-12 col-md-6 pe-0 ps-0 ps-md-3">
                   <img
+                    className = "video"
                     width="100%"
                     height="100%"
                     src={course.imageurl}
@@ -59,7 +61,7 @@ export default function CourseDetail(props) {
                 </div>
               </div>
             ) : (
-              <h1>Course loading</h1>
+              <p>Course loading</p>
             )}
           </div>
           <div>
@@ -79,7 +81,7 @@ export default function CourseDetail(props) {
                 setToggleCourses={props.setToggleCourses}
                 formTitle={"update Lesson"}
                 currentLesson={currentLesson}
-                setShowUpdate = {setShowUpdate}
+                setShowUpdate={setShowUpdate}
               />
             )}
             {course && props.currentUser && !props.currentUser.is_student && (
@@ -107,56 +109,60 @@ export default function CourseDetail(props) {
             )}
           </div>
         </div>
-        <table
-          className="table mt-8"
-          style={{
-            height: "500px",
-            marginTop: "135px",
-            border: "1px solid #008080",
-          }}
-        >
-          <thead className="thead-dark">
-            <tr>
-              {/* <th scope="col">#</th>
+        <div className="control-table">
+          <table
+            className="table-class mt-8"
+            style={{
+              height: "500px",
+              marginTop: "135px",
+              border: "4px solid #008080",
+            }}
+          >
+            <thead className="thead-dark">
+              <tr>
+                {/* <th scope="col">#</th>
               <th scope="col"></th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {course && course.lessons ? (
-              course.lessons.map((lesson, index) => {
-                return (
-                  <tr key={index}>
-                    <th scope="row">{index + 1}</th>
-                    <td>{lesson.lessonname}</td>
-                    <td>
-                      <ReactPlayer url={lesson.lessonmaterial} />
-                     
-                      {
-                        props.currentUser && !props.currentUser.is_student &&
-                        <>
-                        <button
-                          onClick={() => handleLessonUpdate(lesson)}
-                          className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
-                        >
-                          Update{" "}
-                        </button>
-                     
+              </tr>
+            </thead>
+            <tbody>
+              {course && course.lessons ? (
+                course.lessons.map((lesson, index) => {
+                  return (
+                    <tr key={index}>
+                      <th scope="row">{index + 1}</th>
+                      <td>{lesson.lessonname}</td>
+                      <td>
+                        <ReactPlayer url={lesson.lessonmaterial} />
 
-                      <button onClick = {()=> handleDeleteLesson(course.id,lesson.id)} className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm">
-                        Delete{" "}
-                      </button>
-                      </>
-                      }
-                        
-                    </td>
-                  </tr>
-                );
-              })
-            ) : (
-              <h1> Updating data</h1>
-            )}
-          </tbody>
-        </table>
+                        {props.currentUser && !props.currentUser.is_student && (
+                          <>
+                            <button
+                              onClick={() => handleLessonUpdate(lesson)}
+                              className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
+                            >
+                              Update{" "}
+                            </button>
+
+                            <button
+                              onClick={() =>
+                                handleDeleteLesson(course.id, lesson.id)
+                              }
+                              className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm"
+                            >
+                              Delete{" "}
+                            </button>
+                          </>
+                        )}
+                      </td>
+                    </tr>
+                  );
+                })
+              ) : (
+                <p>Updating data</p>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
     </Layout>
   );
