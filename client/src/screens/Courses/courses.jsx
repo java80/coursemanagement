@@ -12,9 +12,9 @@ export default function Courses(props) {
           <div className="row mt-4">
             {
               !allCourses &&
-              <h1 style={{ marginTop: "30px", textAlign: "center" }}>
+              <p style={{ marginTop: "30px", textAlign: "center" }}>
                 Loading Courses ...
-              </h1>
+              </p>
             }
 
             {allCourses.map((course, index) => {
