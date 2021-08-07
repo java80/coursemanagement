@@ -101,7 +101,8 @@ export default function CourseDetail(props) {
                 </div>
                 <button
                   onClick={() => setShowForm((prevState) => !prevState)}
-                  className="btn btn-primary text-white px-3 py-1 shadow-sm"
+                  className="btn btn-primary text-white px-3 py-1 m-4 shadow-sm"
+                  style = {{marginLeft:"-2px"}}
                 >
                   Add Lesson
                 </button>
@@ -129,16 +130,18 @@ export default function CourseDetail(props) {
                 course.lessons.map((lesson, index) => {
                   return (
                     <tr key={index}>
-                      <th scope="row">{index + 1}</th>
-                      <td>{lesson.lessonname}</td>
-                      <td>
-                        <ReactPlayer url={lesson.lessonmaterial} />
+                      
+                      <div className = "control-video">
+                        <td className = "p-4">{ `${index + 1} ${lesson.lessonname}`}</td>
+                        <ReactPlayer width = {"100%"} url={lesson.lessonmaterial} />
+                      </div>
 
+                      {/* <td> */}
                         {props.currentUser && !props.currentUser.is_student && (
                           <>
                             <button
                               onClick={() => handleLessonUpdate(lesson)}
-                              className="btn btn-primary update px-3 py-1 text-white me-3 shadow-sm"
+                              className="btn btn-primary update px-3 py-1 m-4 text-white me-3 shadow-sm"
                             >
                               Update{" "}
                             </button>
@@ -147,13 +150,13 @@ export default function CourseDetail(props) {
                               onClick={() =>
                                 handleDeleteLesson(course.id, lesson.id)
                               }
-                              className="btn btn-danger delete px-3 py-1 text-white me-3 shadow-sm"
+                              className="btn btn-danger delete px-3 py-1 m-4 text-white me-3 shadow-sm"
                             >
                               Delete{" "}
                             </button>
                           </>
                         )}
-                      </td>
+                      {/* </td> */}
                     </tr>
                   );
                 })

@@ -7,6 +7,7 @@ import "./Hamburger.css";
 
 const Hamburger = ({ isOpen, hamBurgerEvent, currentUser, setCurrentUser }) => {
   const history = useHistory();
+  const authToken = localStorage.getItem("authToken");
   const handleLogout = () => {
     logoutUser();
     setCurrentUser(null);
@@ -33,7 +34,9 @@ const Hamburger = ({ isOpen, hamBurgerEvent, currentUser, setCurrentUser }) => {
             Teach Here
           </NavLink>
         </li>
-        <li>
+        { !authToken &&
+          <>
+          <li>
           <NavLink className="text-white text-decoration-none" to="/signup">
             Sign Up
           </NavLink>
@@ -42,15 +45,21 @@ const Hamburger = ({ isOpen, hamBurgerEvent, currentUser, setCurrentUser }) => {
           <NavLink className="text-white text-decoration-none" to="/login">
             Log In
           </NavLink>
-        </li>
-        <li>
-          <button
-            className="text-white bg-transparent border-0"
-            onClick={handleLogout}
-          >
-            logout
-          </button>
-        </li>
+            </li>
+            </>
+        }
+        {
+          authToken &&
+          <li>
+            <button
+              className="text-white bg-transparent border-0"
+              onClick={handleLogout}
+            >
+              logout
+            </button>
+          </li>
+        }
+
         <li> {currentUser && currentUser.email}</li>
       </ul>
     </div>

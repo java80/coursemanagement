@@ -1,3 +1,8 @@
+
+.control-video{
+  width: 640px;
+  position:relative
+}
 @media screen and (max-width: 700px) {
   .control-table {
   
@@ -9,4 +14,11 @@
  .html5-video-player  {
     width: 50%;
   }
+  /* .video-player{
+    width: 100vw !important;
+  } */
+  .control-video{
+  width: 100vw;
+  
+}
 }
